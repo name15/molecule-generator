@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-decoration: underline;
+  margin: 5px;
+  margin-top: 25px;
+}
+
+svg {
+  border: 1px solid black;
+  margin: 5px;
+}
