@@ -1,6 +1,6 @@
 import { Vector, Graph } from "./main";
 
-// >>> Utils
+// Utils
 class Utils {
   static lerp(a: number, b: number, t: number): number {
     if (t < 0) return a;
@@ -8,6 +8,7 @@ class Utils {
     return a * (1 - t) + b * t;
   }
 
+  /*
   static shuffle<T>(array: T[]): void {
     let currentIndex = this.length,
       randomIndex;
@@ -28,12 +29,13 @@ class Utils {
       return arr;
     }, []);
   }
+  */
 }
 
-// >>> Physics
+// Physics
 export class Physics {
-  dt = 0.5;
-  iterations = 3;
+  dt = 0.33;
+  iterations = 10;
   repulsionForce = 1;
 
   edgeTable: number[][];
@@ -105,7 +107,7 @@ export class Physics {
   }
 }
 
-// >>> Rendering
+// Rendering
 export class Rendering {
   prеcision = 3;
   radius = 0.25;
@@ -143,7 +145,7 @@ export class Rendering {
       circle.setAttribute("r", this.radius.toFixed(this.prеcision));
 
       circle.setAttribute("stroke", "black");
-      circle.setAttribute("fill", "white");
+      circle.setAttribute("fill", "transparent");
       circle.setAttribute(
         "stroke-width",
         this.strokeWidth.toFixed(this.prеcision)
@@ -188,20 +190,23 @@ export class Rendering {
       direction.x /= length;
       direction.y /= length;
 
+      let start = {
+        x: vertexA.coords.x + direction.x * this.radius,
+        y: vertexA.coords.y + direction.y * this.radius
+      };
+      let end = {
+        x: vertexB.coords.x - direction.x * this.radius,
+        y: vertexB.coords.y - direction.y * this.radius
+      };
+
       let normal = {
         x: -direction.y,
         y: direction.x
       };
 
       let midpoint = {
-        x: (
-                  (vertexA.coords.x + direction.x * this.radius) +
-                  (vertexB.coords.x - direction.x * this.radius)
-              ) / 2, // prettier-ignore
-        y: (
-                  (vertexA.coords.y + direction.y * this.radius) +
-                  (vertexB.coords.y - direction.y * this.radius)
-              ) / 2 // prettier-ignore
+        x: (start.x + end.x) / 2,
+        y: (start.y + end.y) / 2
       };
 
       for (let j = 0; j < edge.order; j++) {
@@ -225,25 +230,25 @@ export class Rendering {
           this.strokeWidth.toFixed(this.prеcision)
         );
 
-        let vertexANew = { ...vertexA.coords };
-        let vertexBNew = { ...vertexB.coords };
+        let startNew = { ...start };
+        let endNew = { ...end };
         let midpointNew = { ...midpoint };
 
         let factor = (j - (edge.order - 1) / 2) * this.bondOffset;
-        vertexANew.x += factor * normal.x;
-        vertexANew.y += factor * normal.y;
-        vertexBNew.x += factor * normal.x;
-        vertexBNew.y += factor * normal.y;
+        startNew.x += factor * normal.x;
+        startNew.y += factor * normal.y;
+        endNew.x += factor * normal.x;
+        endNew.y += factor * normal.y;
         midpointNew.x += factor * normal.x;
         midpointNew.y += factor * normal.y;
 
-        line1.setAttribute("x1", vertexANew.x.toFixed(this.prеcision));
-        line1.setAttribute("y1", vertexANew.y.toFixed(this.prеcision));
+        line1.setAttribute("x1", startNew.x.toFixed(this.prеcision));
+        line1.setAttribute("y1", startNew.y.toFixed(this.prеcision));
         line1.setAttribute("x2", midpointNew.x.toFixed(this.prеcision));
         line1.setAttribute("y2", midpointNew.y.toFixed(this.prеcision));
 
-        line2.setAttribute("x1", vertexBNew.x.toFixed(this.prеcision));
-        line2.setAttribute("y1", vertexBNew.y.toFixed(this.prеcision));
+        line2.setAttribute("x1", endNew.x.toFixed(this.prеcision));
+        line2.setAttribute("y1", endNew.y.toFixed(this.prеcision));
         line2.setAttribute("x2", midpointNew.x.toFixed(this.prеcision));
         line2.setAttribute("y2", midpointNew.y.toFixed(this.prеcision));
 
