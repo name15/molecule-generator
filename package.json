@@ -2,7 +2,6 @@
   "name": "molecule-generator",
   "version": "1.0.0",
   "description": "Generates all possible isomers of a given molecule formula. ",
-  "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
