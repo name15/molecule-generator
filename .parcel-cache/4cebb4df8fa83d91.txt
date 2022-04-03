@@ -1,0 +1,20 @@
+19
+73C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\.codesandbox132934483381847047 1
+83C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.53116322.js132934493939154140 0
+73C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\package.json132934496322191623 0
+83C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.b7a05eb9.js132934493939154140 0
+71C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\.gitignore132934496364054733 0
+65C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist132934493939231324 1
+71C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\index.html132934488064831756 0
+71C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\styles.css132934483381847047 0
+88C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.1303bb05.css.map132934493939208960 0
+70C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\README.md132934483381847047 0
+64C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\src132934483381847047 1
+74C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\tsconfig.json132934494669514577 0
+72C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\src\main.ts132934483381847047 0
+75C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\src\modules.ts132934483381847047 0
+84C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.1303bb05.css132934493939154140 0
+87C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.53116322.js.map132934493939208960 0
+87C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.b7a05eb9.js.map132934493939213958 0
+76C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\dist\index.html132934493939146044 0
+88C:\Users\PC\OneDrive\project\web\Molecule\molecule-generator\.codesandbox\workspace.json132934483381847047 0
